@@ -263,6 +263,51 @@
               keys</b>.</p>
             <mark>4</mark>
           </section>
+
+          <!--
+            It's common for a part of a question to have a preamble, like the
+            one below.
+
+            These run the risk of being split over a page break.  They are
+            currently not contained in an unbreakable block element as this
+            doesn't play well alongside break-inside:avoid question-parts.
+
+            As such, use an <hr> to manually insert a page break.
+          -->
+          <hr>
+
+          <section>
+            <p>Robots are formidable adversaries.  One of their few weaknesses
+            is their exoskeleton.  Unless this is oiled and cleaned regularly
+            the robot will go rusty and fall apart.</p>
+
+            <p>Robots can be easily fooled into cleaning themselves with
+            dangerous chemicals, rendering the robot inert.  Below is shown
+            such a chemical:</p>
+
+            <img src="antibot.png" width=90%>
+
+            <section>
+              <p>Highlight the active bonds in this compound.</p>
+              <mark>2</mark>
+            </section>
+
+            <section>
+              <p>How many pointing bonds are there in this compound?</p>
+              <ol type=checkbox>
+                <li>None</li>
+                <li>1</li>
+                <li>3</li>
+              </ol>
+              <mark>1</mark>
+            </section>
+
+            <section>
+              <p>Describe the Diels Adler process of robot distillation.</p>
+              <textarea rows=12></textarea>
+              <mark>8</mark>
+            </section>
+          </section>
         </section>
       </main>
 
