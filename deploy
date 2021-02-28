@@ -6,5 +6,7 @@ rsync -av \
   ./fonts \
   www.xaipete.gr:/var/www/html/
 
-ssh www.xaipete.gr mkdir /var/www/html/paper
-scp index.html www.xaipete.gr:/var/www/html/paper/
+ssh www.xaipete.gr mkdir -p /var/www/html/paper
+rsync -av \
+  example/index.html \
+  www.xaipete.gr:/var/www/html/paper/
