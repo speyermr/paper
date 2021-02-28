@@ -33,6 +33,21 @@
   break-after: page;
 }
 
+#logo {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+#logo svg {
+  width: 200px;
+}
+
+#logo hr {
+  background: #888;
+  height: 2px;
+  border: 0;
+}
+
 .paper header ul {
   margin: 0.1em;
   padding-left: 1em;
