@@ -16,13 +16,14 @@
 
   <body>
 
+    <!--
     <script src="contrib/qrcode.js"> </script>
     <script>
       let size = 0; // 0=autodetect
       let resilience = 'H'; // High: survive 30% data loss
       let qr = qrcode(size, resilience);
       let mode = 'Byte';
-      let data = "\x00\x08\x04\x00";
+      let data = "CS/EGS/20210228/";
       qr.addData(data, mode);
       qr.make();
       let svg = qr.createSvgTag();
@@ -30,8 +31,10 @@
       let parser = new DOMParser();
       let doc = parser.parseFromString(svg, 'text/html');
       let el = doc.body.firstChild;
+      el.style.width = '2.4em';
       document.body.prepend(el);
     </script>
+    -->
 
     <div class="paper">
       <header>
