@@ -144,6 +144,17 @@ function format_code_blocks() {
   });
 }
 
+// TODO document this, it's useful for drawing.
+function svgCreateElement(name, attributes) {
+  const ns = "http://www.w3.org/2000/svg"
+  let el = document.createElementNS(ns, name);
+  for (let k in attributes) {
+    let v = attributes[k];
+    el.setAttribute(k, v);
+  }
+  return el;
+}
+
 function complete() {
   add_header_marks();
   add_labels();

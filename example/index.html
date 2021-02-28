@@ -195,9 +195,71 @@
           </code>
 
           <section>
-            What is wrong with this code?
+            <!-- TODO lint <section> elements that have a non-block first
+              element (e.g. text).  -->
+            <p>What is wrong with this code?</p>
             <textarea rows=3></textarea>
             <mark>2</mark>
+          </section>
+
+          <section>
+            <p>Another aspect of life where robots are deficient is typing on
+            keyboards.  It is unlikely that we will see robot typists in our
+            lifetimes.</p>
+
+            <p>Shown below is the central part of a keyboard using the
+            <code>QWERTY</code> layout:</p>
+
+            <svg viewbox="0 0 100 33" width=100%>
+              <g id=keys style="stroke:black; stroke-width:1; fill:#0df;"/>
+              <g id=chars />
+            </svg>
+
+            <script>
+            const keysize = 7;
+            const spacing = 2;
+
+            const keys = document.querySelector('#keys');
+            const chars = document.querySelector('#chars');
+
+            function key(row, col, char) {
+              let x = 5 + (col * (keysize + spacing));
+              if (row == 1) x += 1*keysize/4; // ASDF offset by 1/4
+              if (row == 2) x += 3*keysize/4; // ZXCV offset by 3/4
+              let y = 5 + (row * (keysize + spacing));
+              
+              let r = svgCreateElement('rect',
+                  { x:x, y:y, rx:1, ry:1, width:keysize, height:keysize});
+              keys.appendChild(r);
+
+              // text-anchor aligns horizontally, and dominant-baseline aligns
+              // vertically, but we need to nudge it down by another 10%.
+              let t = svgCreateElement('text', {
+                x: x + 0.50 * keysize,
+                y: y + 0.55 * keysize,
+                'font-size': 4,
+                'text-anchor': 'middle',
+                'dominant-baseline': 'middle',
+              });
+              t.innerHTML = char;
+              chars.appendChild(t);
+            }
+
+            keyboard = [
+              ['Q','W','E','R','T','Y','U','I','O','P'],
+              ['A','S','D','F','G','H','J','K','L',';'],
+              ['Z','X','C','V','B','N','M',',','.'],
+            ]
+
+            keyboard.forEach((chars, row) => {
+              chars.forEach((char, col) => {
+                key(row, col, char);
+              });
+            });
+            </script>
+
+            <p>Highlight the keys which make up the <b>home row</b>.</p>
+            <mark>4</mark>
           </section>
         </section>
       </main>
