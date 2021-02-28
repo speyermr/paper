@@ -161,15 +161,12 @@
 .paper main hr {
   break-after: page;
   border-style: none;
-  width: 200vw;
-  position: relative;
-  left: -50%;
-  right: 0;
+  width: 50vw;
 }
 
 @media screen {
   .paper main hr {
-    border-top: 2px dotted gray;
+    border-top: 4px dotted gray;
   }
 }
 
