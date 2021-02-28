@@ -288,17 +288,17 @@
   counter-reset: question_number;
 }
 
-.paper section {
+.paper main > section {
   counter-increment: question_number;
   counter-reset: question_part_major;
 }
 
-.paper section section {
+.paper main > section > section {
   counter-increment: question_part_major;
   counter-reset: question_part_minor;
 }
 
-.paper section section section {
+.paper main > section > section > section {
   counter-increment: question_part_minor;
 }
 
