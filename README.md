@@ -20,3 +20,5 @@ Stylesheet for marking up question papers.
   </main>
 </div>
 ```
+
+<img src="example.png" width=75% style="border:2px solid gray; border-radius:5px;">
