@@ -1,10 +1,11 @@
 # paper.css
 
-Stylesheet for marking up question papers.
+A stylesheet for marking up question papers.
 
-A complete example can be found <a href="index.html">in the repository</a> and <a href="https://ωωω.χαίρετε.ελ/paper/">also online</a>.
+A complete example can be found <a href="index.html">in the repository</a>
+and <a href="https://ωωω.χαίρετε.ελ/paper/">also online</a>.
 
-
+Printing <a href="index.pdf">to PDF</a> works well and is tested in Chrome, Firefox and Safari.
 
 ```HTML
 <link rel="stylesheet" href="https://ωωω.χαίρετε.ελ/paper.css"></link>
