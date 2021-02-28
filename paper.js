@@ -135,7 +135,7 @@ function format_code_blocks() {
       if (ln < 10) t += '0';
       t += ln + "\n";
     }
-    
+
     let line_numbers = document.createElement('span');
     line_numbers.classList.add('line-numbers');
     line_numbers.innerHTML = t;
@@ -175,6 +175,79 @@ function complete() {
   });
 
   format_code_blocks();
+  annotate_question_numbers();
+  build_mark_sheet();
+}
+
+function lower_roman(n) {
+  const symbols = ['i', 'iv', 'v', 'ix', 'x'];
+  const values = [1, 4, 5, 9, 10];
+  let i = 4;
+  let buf = '';
+  while (n) {
+    let val = values[i];
+    buf += symbols[i].repeat(Math.floor(n/val));
+    n %= val;
+    i--;
+  }
+  return buf;
+}
+
+function annotate_question_numbers() {
+  let counters = [0, null, null];
+  let lower_alpha = n => String.fromCharCode(n + 96);
+
+  function walk(node, depth) {
+    if (node.tagName == 'SECTION') {
+      // counter-increment
+      counters[depth]++;
+
+      // counter-reset
+      for (let i = depth + 1; i < 3; i++) counters[i] = null;
+
+      // annotate
+      let id = '' + counters[0];
+      if (counters[1]) id += '.' + lower_alpha(counters[0]);
+      if (counters[2]) id += '.' + lower_roman(counters[2]);
+      node.setAttribute('data-question-id', id);
+
+      // recurse
+      depth++;
+    }
+    node.childNodes.forEach(child => walk(child, depth));
+  }
+
+  walk(document.body, 0);
+}
+
+function build_mark_sheet() {
+  let empty = () => Array.from({length:100}).map(x => null);
+  let rows = Array.from({length:50}).map(x => empty());
+
+  rows[3][0] = 'MAX';
+
+  let qqs = [];
+  document.querySelectorAll('.question-part').forEach((q, ii) => {
+    let x = ii + 1;
+    let id = q.attributes['data-question-id'].value;
+    let vs = id.split('.');
+    vs.forEach((v, y) => {
+      rows[y][x] = v;
+    });
+
+    let mark = q.querySelector('mark').innerText;
+    rows[3][x] = mark;
+  });
+
+  let csv = rows.map(row => row.join(',')).join("\n");
+
+  let dl = document.createElement('a');
+  let data = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+  dl.setAttribute('href', data);
+  dl.setAttribute('download', 'marks.csv');
+  dl.innerText = 'marks.csv';
+  document.body.append(dl);
+  //dl.click();
 }
 
 window.onload = complete;
