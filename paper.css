@@ -1,4 +1,4 @@
-.exam {
+.paper {
   line-height: 1.5em;
   font-size: 10pt;
 }
@@ -10,7 +10,7 @@
     color: #333;
   }
 
-  .exam {
+  .paper {
     margin-left: 6em;
     margin-right: 6em;
     max-width: 60em;
@@ -18,7 +18,7 @@
 }
 
 @media screen and (max-width: 60em) {
-  .exam {
+  .paper {
     margin-left: 0;
     margin-right: 0;
   }
@@ -26,29 +26,29 @@
 
 
 /*** Front Matter ***/
-.exam header {
+.paper header {
   border-bottom: 2px solid black;
   break-after: page;
 }
 
-.exam header ul {
+.paper header ul {
   margin: 0.1em;
   padding-left: 1em;
 }
 
-.exam header mark {
+.paper header mark {
   background: none;
   font-weight: bold;
 }
 
-.exam header hr {
+.paper header hr {
   border-style: none;
   width: 100%;
   height: 0.3em;
   background: black;
 }
 
-.exam header form {
+.paper header form {
   display: block;
   border: 1px solid gray;
   overflow: hidden;
@@ -58,14 +58,14 @@
   margin-bottom: 7em;
 }
 
-.exam header label {
+.paper header label {
   float: left;
   width: 25%;
   clear: both;
   margin: 1em;
 }
 
-.exam header input {
+.paper header input {
   float: left;
   width: 65%;
   margin: 1em;
@@ -77,18 +77,18 @@
 
 
 /*** Questions ***/
-.exam section {
+.paper section {
   display: block;
   position: relative;
   margin-left: 3.0em;
   margin-bottom: 1.1em;
 }
 
-.exam p::first-child {
+.paper p::first-child {
   margin-top: 0;
 }
 
-.exam div.blankbox {
+.paper div.blankbox {
   border: 2px solid black;
   margin-top: 1em;
 }
@@ -99,19 +99,19 @@
  * (level-1, level-2, level-3) in the questions, but without being as large as
  * the front matter's headings.
  */
-.exam main h1 {
+.paper main h1 {
   font-size: 1.35em;
 }
 
-.exam main h2 {
+.paper main h2 {
   font-size: 1.23em;
 }
 
-.exam main h3 {
+.paper main h3 {
   font-size: 1.17em;
 }
 
-.exam main mark {
+.paper main mark {
   background: none;
   font-weight: bold;
   width: 100%;
@@ -119,15 +119,15 @@
   display: block;
 }
 
-.exam main mark::before {
+.paper main mark::before {
   content: '[';
 }
 
-.exam main mark::after {
+.paper main mark::after {
   content: ']';
 }
 
-.exam main textarea {
+.paper main textarea {
   display: block;
   width: 100%;
   clear: both;
@@ -143,43 +143,43 @@
   line-height: 1cm;
 }
 
-.exam main details {
+.paper main details {
   padding: 1em;
 }
 
-.exam main details[open] {
+.paper main details[open] {
   border: 2px solid gray;
   border-radius: 1em;
 }
 
-.exam main details summary {
+.paper main details summary {
   color: #aaa;
 }
 
-.exam main hr {
+.paper main hr {
   break-after: page;
   border-style: none;
   width: 5em;
 }
 
 @media screen {
-  .exam main hr {
+  .paper main hr {
     border: 2px dashed gray;
   }
 }
 
 /* Code Listings */
-.exam pre {
+.paper pre {
   position: relative;
 }
 
-.exam code {
+.paper code {
   font-size: 115%;
   line-height: 1.54em;
   position: relative;
 }
 
-.exam code[block] {
+.paper code[block] {
   left: 4em;
   white-space: pre;
   margin: 1em;
@@ -188,7 +188,7 @@
   display: block;
 }
 
-.exam .line-numbers {
+.paper .line-numbers {
   background: #777;
   color: #eee;
   padding-left: 0.3em;
@@ -226,20 +226,20 @@
 
 /*** Checkbox lists ***/
 
-.exam main ol[type='checkbox'] {
+.paper main ol[type='checkbox'] {
   counter-reset: item;
 }
 
-.exam main ol[type='checkbox'] li {
+.paper main ol[type='checkbox'] li {
   list-style-type: none;
   margin-bottom: 0.4em;
 }
 
-.exam main ol[type='checkbox'] input[type='checkbox'] {
+.paper main ol[type='checkbox'] input[type='checkbox'] {
   transform: scale(1.2);
 }
 
-.exam main ol[type='checkbox'] label:before {
+.paper main ol[type='checkbox'] label:before {
   display: inline-block;
   font-weight: bold;
   margin-right: 2em;
@@ -250,19 +250,19 @@
 
 
 /*** Table Styling **/
-.exam table.fill-in {
+.paper table.fill-in {
   max-width: 90%;
   min-width: 75%;
   margin: 1em 5% 1em 5%;
   border-collapse: collapse;
 }
 
-.exam table.fill-in thead {
+.paper table.fill-in thead {
   background: #ccc;
 }
 
-.exam table.fill-in th,
-.exam table.fill-in td
+.paper table.fill-in th,
+.paper table.fill-in td
 {
   padding: 1.4em 1.0em 1.4em 1.0em;
   border: 2px solid grey;
@@ -271,7 +271,7 @@
 }
 
 /* The first column is outside the grid lines */
-.exam table.fill-in.th-outside th {
+.paper table.fill-in.th-outside th {
   border-top: 0;
   border-left: 0;
   border-bottom: 0;
@@ -282,26 +282,26 @@
 /*** Question Numbering ***/
 
 /* Counters **/
-.exam {
+.paper {
   counter-reset: question_number;
 }
 
-.exam section {
+.paper section {
   counter-increment: question_number;
   counter-reset: question_part_major;
 }
 
-.exam section section {
+.paper section section {
   counter-increment: question_part_major;
   counter-reset: question_part_minor;
 }
 
-.exam section section section {
+.paper section section section {
   counter-increment: question_part_minor;
 }
 
 /* Labelling */
-.exam main section > label {
+.paper main section > label {
   position: absolute;
   float: left;
   clear: both;
@@ -310,37 +310,37 @@
   font-weight: bold;
 }
 
-.exam section > label::before {
+.paper section > label::before {
   content: counter(question_number);
 }
 
-.exam section section > label::before {
+.paper section section > label::before {
   content: '(' counter(question_part_major, lower-alpha) ')';
 }
 
-.exam section section section > label::before {
+.paper section section section > label::before {
   content: '(' counter(question_part_minor, lower-roman) ')';
 }
 
 
 /*** Printing ***/
 @media print {
-  .exam {
+  .paper {
     margin-left: 2em;
     margin-right: 3em;
   }
 
-  .exam section {
+  .paper section {
     break-before: page;
     min-height: 1px; /* See [FFBREAK] */
   }
 
-  .exam section section {
+  .paper section section {
     break-before: auto;
     min-height: 1px; /* See [FFBREAK] */
   }
 
-  .exam section section section {
+  .paper section section section {
     break-before: auto;
     min-height: 1px; /* See [FFBREAK] */
   }
@@ -359,12 +359,12 @@
     break-inside: avoid;
   }
 
-  .exam header hr {
+  .paper header hr {
     border: 3px solid black;
     height: 0px;
   }
 
-  .exam hr {
+  .paper hr {
     border: none;
   }
 
@@ -380,11 +380,11 @@
 
 /*** Fonts ***/
 
-.exam {
+.paper {
   font-family: 'IBM Plex', sans-serif;
 }
 
-.exam code {
+.paper code {
   font-family: 'Roboto Mono', monospace;
   font-variant-numeric: slashed-zero;
 }
