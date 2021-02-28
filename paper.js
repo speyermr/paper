@@ -169,6 +169,7 @@ function complete() {
   document.querySelectorAll("ol[type='checkbox'] li").forEach(li => {
     let box = document.createElement('input');
     box.setAttribute('type', 'checkbox');
+    box.setAttribute('onclick', 'return false;');
     //if (li.attributes['checked']) box.setAttribute('checked', '');
     let label = document.createElement('label');
     li.prepend(box, label);
