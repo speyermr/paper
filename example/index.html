@@ -228,7 +228,7 @@
               if (row == 1) x += 1*keysize/4; // ASDF offset by 1/4
               if (row == 2) x += 3*keysize/4; // ZXCV offset by 3/4
               let y = 5 + (row * (keysize + spacing));
-              
+
               let r = svgCreateElement('rect',
                   { x:x, y:y, rx:1, ry:1, width:keysize, height:keysize});
               keys.appendChild(r);
