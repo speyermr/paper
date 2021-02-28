@@ -8,5 +8,5 @@ rsync -av \
 
 ssh www.xaipete.gr mkdir -p /var/www/html/paper
 rsync -av \
-  example/index.html \
+  example/ \
   www.xaipete.gr:/var/www/html/paper/
