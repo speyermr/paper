@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <link rel="stylesheet" href="paper.css">
+    <script src="paper.js"></script>
+  </head>
+  <body>
+    <div class="exam">
+      <header>
+        <h2>GCSE</h2>
+        <h1>Processology</h1>
+        <h3>Paper 4 – Making Things</h3>
+
+        <hr>
+
+        <ul>
+          <li>You may use a <b>calculator</b></li>
+          <li>Questions marked with an <b>asterisk*</b> are optional</li>
+          <li>Answer in black ink or black ball point pen</li>
+        </ul>
+
+      </header>
+
+      <main>
+        <section>
+          <h1>Cheesemaking</h1>
+          <p>This question is about cheese, a type of dairy product.</p>
+
+          <section>
+            <section>
+              <p>Name two types of cheese</p>
+              <textarea rows=2>1 </textarea>
+              <textarea rows=2>2 </textarea>
+              <mark>2</mark>
+            </section>
+
+            <section>
+              <p>Which of these cheeses is a runny cheese?</p>
+              <ol type=checkbox>
+                <li>Brie</li>
+                <li>Cheddar</li>
+                <li>Stilton</li>
+                <li>Feta</li>
+              </ol>
+              <mark>1</mark>
+            </section>
+
+            <section>
+              <p>What makes some cheese runny?</p>
+              <textarea rows=4></textarea>
+              <mark>4</mark>
+            </section>
+          </section>
+            
+          <section>
+            <p>How is cheese made?</p>
+            <textarea rows=10></textarea>
+            <mark>16</mark>
+          </section>
+        </section>
+
+
+        <section>
+          <label>*</label><!-- optional question -->
+
+          <section>
+            <p>A supermarket is made of bricks</p>
+            <p>What is a brick?</p>
+            <textarea rows=2></textarea>
+            <mark>3</mark>
+          </section>
+
+          <section>
+            <p>Where do bricks come from?</p>
+            <textarea rows=2></textarea>
+            <mark>3</mark>
+          </section>
+
+          <section>
+            <p>Complete the diagram to show the <i>Flemish Bond</i> bricklaying
+            pattern.</p>
+
+            <svg viewbox="0 0 180 130" width=80%>
+              <defs>
+                <g id=side>
+                  <g style="stroke:#f55; fill:#822; stroke-width:2px;">
+                    <rect rx=1 x=20 y=5  height=20 width=20 />
+                    <rect rx=1 x=0  y=28 height=20 width=60 />
+                    <rect rx=1 x=20 y=51 height=20 width=20 />
+                    <rect rx=1 x=0  y=74 height=20 width=60 />
+                    <rect rx=1 x=20 y=97 height=20 width=20 />
+                  </g>
+                </g>
+              </defs>
+
+              <use xlink:href=#side x=-25 />
+              <use xlink:href=#side x=145 />
+            </svg>
+
+            <mark>1</mark>
+          </section>
+
+          <section>
+            <p>Brick based construction needs to adhere to many commonplace rules
+            found in the construction industry.</p>
+            <ul>
+              <li>Bricks must be level</li>
+              <li>No brick goes unused</li>
+              <li>Mortar must be up to specification</li>
+            </ul>
+            <p>Complete the table below.</p>
+
+            <table class=fill-in>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Colour</th>
+                  <th>Usage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>clay</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>grey</td>
+                  <td>industrial</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>kiln making</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <mark>5</mark>
+          </section>
+        </section>
+
+        <section>
+          <h1>Lettering</h1>
+          <p>It is often said that lettering (often known as
+          <em>calligraphy</em>) is the one true artform known to us which
+          cannot be mastered by robots.</p>
+
+          <section>
+            <p>Complete the table below with appropriate letters in your best
+            cursive, without drawing between the boxes provided</p>
+
+            <table class="fill-in th-outside">
+              <tbody>
+                <tr>
+                  <th>Letters A&nbsp;to&nbsp;H</th>
+                  <td></td><td></td><td></td><td></td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                  <th>Numbers 0&nbsp;to&nbsp;7</th>
+                  <td></td><td></td><td></td><td></td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <mark>4&half;</mark>
+          </section>
+        </section>
+
+        <section>
+          <h1>Robot Uprisings</h1>
+
+          <p>Examine the following code listing:</p>
+
+          <code block numbered indented>
+            from objects import Human
+            from random import random
+
+            def love(object):
+              if type(object) == Human:
+                return False
+              else:
+                return random <= 0.10
+          </code>
+
+          <section>
+            What is wrong with this code?
+            <textarea rows=3></textarea>
+            <mark>2</mark>
+          </section>
+        </section>
+      </main>
+
+      <footer>End of paper.</footer>
+    </div>
+  </body>
+</html>

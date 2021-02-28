@@ -1,0 +1,432 @@
+.exam {
+  line-height: 1.5em;
+  font-size: 10pt;
+}
+
+@media screen {
+  /* Reduce screen contrast */
+  body, textarea {
+    background: #fffff5;
+    color: #333;
+  }
+
+  .exam {
+    margin-left: 6em;
+    margin-right: 6em;
+    max-width: 60em;
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .exam {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
+/*** Front Matter ***/
+.exam header {
+  border-bottom: 2px solid black;
+  break-after: page;
+}
+
+.exam header ul {
+  margin: 0.1em;
+  padding-left: 1em;
+}
+
+.exam header mark {
+  background: none;
+  font-weight: bold;
+}
+
+.exam header hr {
+  border-style: none;
+  width: 100%;
+  height: 0.3em;
+  background: black;
+}
+
+.exam header form {
+  display: block;
+  border: 1px solid gray;
+  overflow: hidden;
+  border-top-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  padding: 1em;
+  margin-bottom: 7em;
+}
+
+.exam header label {
+  float: left;
+  width: 25%;
+  clear: both;
+  margin: 1em;
+}
+
+.exam header input {
+  float: left;
+  width: 65%;
+  margin: 1em;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid black;
+  background: none;
+}
+
+
+/*** Questions ***/
+.exam section {
+  display: block;
+  position: relative;
+  margin-left: 3.0em;
+  margin-bottom: 1.1em;
+}
+
+.exam p::first-child {
+  margin-top: 0;
+}
+
+.exam div.blankbox {
+  border: 2px solid black;
+  margin-top: 1em;
+}
+
+/*** Headings ***
+ *
+ * These are slightly smaller so that they have correct semantic meaning
+ * (level-1, level-2, level-3) in the questions, but without being as large as
+ * the front matter's headings.
+ */
+.exam main h1 {
+  font-size: 1.35em;
+}
+
+.exam main h2 {
+  font-size: 1.23em;
+}
+
+.exam main h3 {
+  font-size: 1.17em;
+}
+
+.exam main mark {
+  background: none;
+  font-weight: bold;
+  width: 100%;
+  text-align: right;
+  display: block;
+}
+
+.exam main mark::before {
+  content: '[';
+}
+
+.exam main mark::after {
+  content: ']';
+}
+
+.exam main textarea {
+  display: block;
+  width: 100%;
+  clear: both;
+  resize: none;
+  font-family: sans-serif;
+  font-size: 100%;
+  border: none;
+  margin-top: 1em;
+  outline: none;
+  overflow: hidden;
+  box-shadow: none;
+  line-break: anywhere;
+  line-height: 1cm;
+}
+
+.exam main details {
+  padding: 1em;
+}
+
+.exam main details[open] {
+  border: 2px solid gray;
+  border-radius: 1em;
+}
+
+.exam main details summary {
+  color: #aaa;
+}
+
+.exam main hr {
+  break-after: page;
+  border-style: none;
+  width: 5em;
+}
+
+@media screen {
+  .exam main hr {
+    border: 2px dashed gray;
+  }
+}
+
+/* Code Listings */
+.exam pre {
+  position: relative;
+}
+
+.exam code {
+  font-size: 115%;
+  line-height: 1.54em;
+  position: relative;
+}
+
+.exam code[block] {
+  left: 4em;
+  white-space: pre;
+  margin: 1em;
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  display: block;
+}
+
+.exam .line-numbers {
+  background: #777;
+  color: #eee;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border-radius: 3px;
+  display: block;
+  float: left;
+  position: absolute;
+  top: 0;
+  left: -2.8em;
+}
+
+
+/*** Linting ***/
+
+.error {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 3px solid red;
+  border-radius: 5px;
+  padding: 0.4em;
+  background: red;
+  color: white;
+}
+
+.error div {
+  display: none;
+}
+
+.error:hover div {
+  display: block;
+}
+
+
+/*** Checkbox lists ***/
+
+.exam main ol[type='checkbox'] {
+  counter-reset: item;
+}
+
+.exam main ol[type='checkbox'] li {
+  list-style-type: none;
+  margin-bottom: 0.4em;
+}
+
+.exam main ol[type='checkbox'] input[type='checkbox'] {
+  transform: scale(1.2);
+}
+
+.exam main ol[type='checkbox'] label:before {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 2em;
+  margin-left: 1em;
+  counter-increment: item;
+  content: counter(item, upper-alpha);
+}
+
+
+/*** Table Styling **/
+.exam table.fill-in {
+  max-width: 90%;
+  min-width: 75%;
+  margin: 1em 5% 1em 5%;
+  border-collapse: collapse;
+}
+
+.exam table.fill-in thead {
+  background: #ccc;
+}
+
+.exam table.fill-in th,
+.exam table.fill-in td
+{
+  padding: 1.4em 1.0em 1.4em 1.0em;
+  border: 2px solid grey;
+  font-size: 110%;
+  min-width: 0.4em;
+}
+
+/* The first column is outside the grid lines */
+.exam table.fill-in.th-outside th {
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 0;
+  text-align: right;
+}
+
+
+/*** Question Numbering ***/
+
+/* Counters **/
+.exam {
+  counter-reset: question_number;
+}
+
+.exam section {
+  counter-increment: question_number;
+  counter-reset: question_part_major;
+}
+
+.exam section section {
+  counter-increment: question_part_major;
+  counter-reset: question_part_minor;
+}
+
+.exam section section section {
+  counter-increment: question_part_minor;
+}
+
+/* Labelling */
+.exam main section > label {
+  position: absolute;
+  float: left;
+  clear: both;
+  left: -3.0em;
+  width: 4em;
+  font-weight: bold;
+}
+
+.exam section > label::before {
+  content: counter(question_number);
+}
+
+.exam section section > label::before {
+  content: '(' counter(question_part_major, lower-alpha) ')';
+}
+
+.exam section section section > label::before {
+  content: '(' counter(question_part_minor, lower-roman) ')';
+}
+
+
+/*** Printing ***/
+@media print {
+  .exam {
+    margin-left: 2em;
+    margin-right: 3em;
+  }
+
+  .exam section {
+    break-before: page;
+    min-height: 1px; /* See [FFBREAK] */
+  }
+
+  .exam section section {
+    break-before: auto;
+    min-height: 1px; /* See [FFBREAK] */
+  }
+
+  .exam section section section {
+    break-before: auto;
+    min-height: 1px; /* See [FFBREAK] */
+  }
+
+  .breaker {
+    break-before: page;
+    min-height: 1px; /* See [FFBREAK] */
+  }
+
+  /* [FFBREAK] The 1px height fixes a bug in Firefox print.  Without this
+   * min-height the labels at the start of a new top-level section disappear
+   * when printing.
+   */
+
+  .question-part {
+    break-inside: avoid;
+  }
+
+  .exam header hr {
+    border: 3px solid black;
+    height: 0px;
+  }
+
+  .exam hr {
+    border: none;
+  }
+
+  details {
+    display: none;
+  }
+
+  details[open] {
+    display: block;
+  }
+}
+
+
+/*** Fonts ***/
+
+.exam {
+  font-family: 'IBM Plex', sans-serif;
+}
+
+.exam code {
+  font-family: 'Roboto Mono', sans-serif;
+  font-variant-numeric: slashed-zero;
+}
+
+/* Definitions */
+
+@font-face {
+  font-family: 'IBM Plex';
+  font-style: normal;
+  src: url('fonts/IBMPlexSans-Regular.woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex';
+  font-style: italic;
+  src: url('fonts/IBMPlexSans-Italic.woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/IBMPlexSans-Bold.woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/IBMPlexSans-BoldItalic.woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/Roboto Mono 400.woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/Roboto Mono 700.woff2');
+}
