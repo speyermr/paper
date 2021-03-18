@@ -50,7 +50,7 @@ function tag_questions() {
   });
   */
 
-  document.querySelectorAll('mark').forEach(el => {
+  document.querySelectorAll('.paper main mark').forEach(el => {
     el.parentNode.classList.add('question-part');
   });
 }
