@@ -1,3 +1,5 @@
+// vim: sw=2:ts=2:et
+
 const DOTS = '..........'.repeat(500);
 
 function add_header_marks() {
