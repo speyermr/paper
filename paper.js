@@ -179,7 +179,10 @@ function complete() {
 
   format_code_blocks();
   annotate_question_numbers();
-  build_mark_sheet();
+
+  if (window.location.search.includes('marksheet')) {
+    build_mark_sheet();
+  }
 }
 
 function lower_roman(n) {
