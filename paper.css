@@ -197,12 +197,15 @@
 }
 
 .paper code[block] {
-  left: 4em;
   white-space: pre;
-  margin: 1em;
-  margin-top: 2.0em;
+  margin-left: 2.0em;
+  margin-top: 1.0em;
   margin-bottom: 2.0em;
   display: block;
+}
+
+.paper code[numbered] {
+  margin-left: 4.0em;
 }
 
 .paper .line-numbers {
