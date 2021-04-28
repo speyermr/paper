@@ -88,6 +88,10 @@
   background: none;
 }
 
+.paper header h4 {
+  margin: 0.1rem;
+  margin-top: 1rem;
+}
 
 /*** Questions ***/
 .paper section {
